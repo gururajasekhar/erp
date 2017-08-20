@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ERP</title>
+	      <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div style="position: fixed; left: 50px;top: 10px;"><?php
+		session_start();
+		$username = $_SESSION['username'];
+		$designation = $_SESSION['designation'];
+		echo "Welcome ";
+		echo $username;
+		echo " to";
+		echo '<H2 style="position: fixed;left: 50px;top: 10px;">'.$designation.' Module</H2><br>';
+	?></div>
+	<div style="position: fixed; top: 70px;left: 50px;">
+		<form name="go" method="POST">
+			<br>
+			<input  type="text" name="cusid" placeholder="Customer ID"><br>
+			<br>
+			<input type="submit" name="go" id="go" value="GO">
+		</form>
+		<?php
+		if(isset($_POST["go"])){  
+
+				if(!empty($_POST['cusid'])) {  
+					
+				    $cusid=$_POST['cusid'];    
+				  
+				    $con = mysqli_connect("localhost", "root","", "temperp");
+
+				    if (!$con) {
+				        echo "<div>";
+				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				        echo "</div>";
+					}
+				  		
+				    $query = "SELECT * FROM customer WHERE cusid = '$cusid'";
+        			$result = mysqli_query( $con, $query);
+        			$row = mysqli_fetch_array($result);
+        			
+        			$loggedIn = false;
+
+        			if(!$row){
+			            echo '<script language="javascript">alert("Invalid Customer ID");</script>';
+			            echo '<br>';
+			        }
+			        else {
+			        	echo "<br>";
+			        	echo "<br><b>CUSTOMER NAME</b>   : ".$row['cusname'];
+						echo "<br><b>CUSTOMER ID</b>     : ".$row['cusid'];
+						echo "<br><b>AADHAR CARD</b>     : ".$row['cusadhar'];
+						echo "<br><b>PAN CARD</b>        : ".$row['cuspan'];
+						echo "<br><b>SAVINGS ACCOUNT</b> : ".$row['savingamount'];
+						if(!$row['demat']){
+						echo "<br><b>DEMAT ACCOUNT</b>   : NO";
+						}else{
+						echo "<br><b>DEMAT ACCOUNT ID</b>   : ".$row['dematid'];
+						}
+						echo "<br><b>SALARY PER ANNUM:</b> ".$row['salarypa'];
+							            	
+			        }
+				} 
+				else {  
+			 		echo '<script language="javascript">alert("Please enter Customer ID");</script>';			    	
+			 	}  
+			}else {  
+			 	echo '<script language="javascript">alert("Enter customer ID and click GO ");</script>';  
+			}  
+
+		?>
+	</div>
+	
+	<div align="right"><a href="main.php">LOG OUT</a></div>
+</body>
+</html>
