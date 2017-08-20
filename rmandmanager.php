@@ -76,6 +76,6 @@
 		?>
 	</div>
 	
-	<div align="right"><a href="main.php">LOG OUT</a></div>
+	<div align="right"><a href="login.php">LOG OUT</a></div>
 </body>
 </html>
