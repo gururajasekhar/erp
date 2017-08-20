@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ERP</title>
+	<title>ERP MODULE</title>
 </head>
 <body>
 	<div style="position: fixed; left: 50px;top: 10px;"><?php
