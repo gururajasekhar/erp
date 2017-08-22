@@ -57,7 +57,13 @@ if(isset($_POST["submit"])){
 			            	$_SESSION['username']= $rowname['empname'];
 			            	$_SESSION['designation']= $row['designation'];
 			            	header('Location:rmandmanager.php'); 
-			            }else{
+			            }else if($row['designation']=='Bidding Manager'){
+			            	session_start();
+			            	$_SESSION['username']= $rowname['empname'];
+			            	$_SESSION['designation']= $row['designation'];
+			            	header('Location:biddingAdmin.php');
+			            }
+			            else{
 			            	session_start();
 			            	$_SESSION['username']= $rowname['empname'];
 			            	$_SESSION['designation']= $row['designation'];
