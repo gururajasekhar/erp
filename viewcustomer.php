@@ -9,11 +9,12 @@
 		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div style="position: fixed; left: 50px;"><a href="main.php">HOME</a></div>
 	<div style="position: fixed; top :10px;left: 50px;"><h2>WELCOME TO JPM MORTGAGE BIDDING</h2></div>
 	<div style="position: fixed; top: 70px;left: 50px;">
-		<div class="btn btn-default" type="button" style="position: relative;" ><a href="">NEW BIDDER</a></div>
+		<div class="btn btn-default" type="button" style="position: relative;" ><a href="newOutside.php">NEW BIDDER</a></div>
 		
-		<div class="btn btn-default" type="button" style="position: relative;"  ><a href="">EXISTING BIDDER</a></div>
+		<div class="btn btn-default" type="button" style="position: relative;"  ><a href="existingOutside.php">EXISTING BIDDER</a></div>
 	</div>
 </body>
 </html>

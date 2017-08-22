@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>ERP MODULE</title>
-	  <meta charset="utf-8">
+	<title>ERP</title>
+	 <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -16,7 +15,7 @@
 	session_destroy();
 ?>
 	<form style="position : fixed; left: 20px; top: 30px;"  name="submit"  method="POST">
-	  <input type="text" name="empid" placeholder="Employee ID"><br><br>
+	  <input type="text" name="empid" placeholder="Outsider ID"><br><br>
 	  <input type="password" name="password" placeholder="Password"><br><br>
 	  <input type="submit" value="Submit" name="submit" /><br>
 	</form>
@@ -36,12 +35,11 @@ if(isset($_POST["submit"])){
 				        echo "</div>";
 					}
 				  	
-				    $query = "SELECT designation FROM employee WHERE empid = '$user' AND password = '$pass'";
+				    $query = "SELECT * FROM outsider WHERE outsideid = '$user' AND outsidepassword = '$pass'";
         			$result = mysqli_query( $con, $query);
-        			$queryname = "SELECT empname FROM employee WHERE empid = '$user' AND password = '$pass'";
-        			$resultname = mysqli_query( $con, $queryname);
+        			
         			$row = mysqli_fetch_array($result);
-        			$rowname = mysqli_fetch_array($resultname);
+        			//$rowname = mysqli_fetch_array($resultname);
 
         			$loggedIn = false;
 
@@ -50,26 +48,10 @@ if(isset($_POST["submit"])){
 			            echo '<br>';
 			        }
 			        else {
-			            $loggedIn = true;
-			            echo '<script language="javascript">alert("Logged in");</script>';
-			            echo '<br>';
-			            if($row['designation']=='Manager'||$row['designation']=='RM'){
-			            	session_start();
-			            	$_SESSION['username']= $rowname['empname'];
-			            	$_SESSION['designation']= $row['designation'];
-			            	header('Location:rmandmanager.php'); 
-			            }else if($row['designation']=='Bidding Manager'){
-			            	session_start();
-			            	$_SESSION['username']= $rowname['empname'];
-			            	$_SESSION['designation']= $row['designation'];
-			            	header('Location:biddingAdmin.php');
-			            }
-			            else{
-			            	session_start();
-			            	$_SESSION['username']= $rowname['empname'];
-			            	$_SESSION['designation']= $row['designation'];
-			            	header('Location:tellerandpba.php');
-			            }
+			            session_start();
+			            	$_SESSION['outsidername']= $row['outsidename'];
+			            	$_SESSION['outsiderid']= $row['outsideid'];
+			            	header('Location:bid.php'); 
 			        }
 	} 
 	else {  

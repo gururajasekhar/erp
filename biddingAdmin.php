@@ -70,4 +70,6 @@
 
 		?>
 	</div>
+	<div align="right"><a href="login.php">LOG OUT</a></div>
 </body>
+</html>
