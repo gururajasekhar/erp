@@ -21,16 +21,12 @@
 		?></div>
 		<p></p>
 		<div style="position: fixed; top: 70px;left: 50px;">
-		<div class="btn btn-default" type="button" style="position: absolute;  " >LOANS</div>
-		<BR><BR>
-		<div class="btn btn-default" type="button" style="position: absolute; " >ACCOUNTS</div>
+		
+		<div class="btn btn-default" type="button" style="position: absolute; " >EDIT ACCOUNT</div>
 		<BR><bR>
-		<div class="btn btn-default" type="button" style="position: absolute; " >CREDIT CARDS</div>
+		<div class="btn btn-default" type="button" style="position: absolute; " ><a href="creditcard.php">SANCTION CREDIT CARD</a></div>
 		</div>
-<?php
-
-
-?>
+		
 	<div align="right"><a href="login.php">LOG OUT</a></div>	
 	</body>
 </html>

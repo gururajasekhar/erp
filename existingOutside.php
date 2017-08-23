@@ -58,7 +58,7 @@ if(isset($_POST["submit"])){
  		echo '<script language="javascript">alert("Please enter credentials");</script>';			    	
  	}  
 }else {  
- 	echo '<script language="javascript">alert("Not yet submitted");</script>';  
+// 	echo '<script language="javascript">alert("Not yet submitted");</script>';  
 }  
 
 ?>  

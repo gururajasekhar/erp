@@ -17,7 +17,10 @@
 		echo $username;
 		echo " to";
 		echo '<H2 style="position: fixed;left: 50px;top: 10px;">'.$designation.' Module</H2><br>';
-	?></div>
+	?>
+		<div class="btn btn-default" type="button" style="position: relative;left: 350px" ><a href="newmortgage.php">Enter new mortgage property</a></div>
+		<BR><BR>
+	</div>
 	<div style="position: fixed; top: 70px;left: 50px;">
 		<form name="go" method="POST">
 			<br>
@@ -53,11 +56,11 @@
 			        else {
 			    		
 						echo "<table>";
-
+						echo "<tr><td>ID --</td><td> Name -</td><td>- Amount</td></tr>"; 
 						while($row = mysqli_fetch_array($result)){   
-						echo "<tr><td>" . $row['outsideid'] . "</td><td>" . $row['outsidename'] . "</td><td>" . $row['bidamount'] . "</td></tr>";  
+						echo "<tr><td>" . $row['outsideid'] . "- </td><td>- " . $row['outsidename'] . " - </td><td>- " . $row['bidamount'] . "</td></tr>";  
 						}
-
+ 
 						echo "</table>";
 			        }
 				} 
