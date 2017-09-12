@@ -24,8 +24,7 @@
 				    $username=$_POST['outname'];    
 				  	$userpass = $_POST['password'];
 					$aadhar = $_POST['aadhar'];
-				    $con = mysqli_connect("localhost", "root","", "temperp");
-
+$con = mysqli_connect("localhost", "root","", "temperp");					
 				    if (!$con) {
 				        echo "<div>";
 				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -43,7 +42,7 @@
         			
         			if(mysqli_query($con,$queryname)){
         				//echo '<script language="javascript">alert("Successfully created account for bidding GO TO HOME");</script>';
-        				//session_destroy();
+        				session_destroy();
         				header('Location:existingOutside.php');
 
         			}else{

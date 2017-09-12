@@ -36,6 +36,7 @@
 				    $proid=$_POST['proid'];    
 				  
 				    $con = mysqli_connect("localhost", "root","", "temperp");
+//				    					$con = mysqli_connect("localhost", "id2886788_jigarerp","partherp", "id2886788_temperp");
 
 				    if (!$con) {
 				        echo "<div>";

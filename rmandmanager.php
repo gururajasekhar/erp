@@ -32,8 +32,7 @@
 					
 				    $cusid=$_POST['cusid'];    
 				  
-				    $con = mysqli_connect("localhost", "root","", "temperp");
-
+$con = mysqli_connect("localhost", "root","", "temperp");					
 				    if (!$con) {
 				        echo "<div>";
 				        echo "Failed to connect to MySQL: " . mysqli_connect_error();

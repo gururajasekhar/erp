@@ -18,8 +18,7 @@
 				    			session_start();
 				    			$cusid=$_SESSION['cusid'];    
 					  			
-							    $con = mysqli_connect("localhost", "root","", "temperp");
-
+$con = mysqli_connect("localhost", "root","", "temperp");					
 							    if (!$con) {
 							        echo "<div>";
 							        echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -34,7 +33,7 @@
         			
 		        			if(mysqli_query($con,$queryname)){
 		        				//echo '<script language="javascript">alert("Entered creditcard details for"'.$row['cusname'].');</script>';
-		        				//session_destroy();
+		        				session_destroy();
 		        				header('Location:tellerandpba.php');
 
 		        			}else{

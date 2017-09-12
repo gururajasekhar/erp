@@ -26,8 +26,7 @@
 				  	$username = $_POST['proname'];
 					$des = $_POST['prodes'];
 					$intial = $_POST['intial'];
-				    $con = mysqli_connect("localhost", "root","", "temperp");
-
+$con = mysqli_connect("localhost", "root","", "temperp");
 				    if (!$con) {
 				        echo "<div>";
 				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -39,7 +38,7 @@
         			
         			if(mysqli_query($con,$queryname)){
         				//echo '<script language="javascript">alert("Successfully created current product for bidding ");</script>';
-        				//session_destroy();
+        				session_destroy();
         				header('Location:biddingAdmin.php');
 
         			}else{

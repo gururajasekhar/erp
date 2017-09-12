@@ -21,8 +21,7 @@
 	<div style="position: fixed; left: 50px;top: 70px;">Enter the bid amount for</div>
 	<div style="position: fixed; left: 50px;top: 70px;">
 	<?php
-					$con = mysqli_connect("localhost", "root","", "temperp");
-
+$con = mysqli_connect("localhost", "root","", "temperp");
 				    if (!$con) {
 				        echo "<div>";
 				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
